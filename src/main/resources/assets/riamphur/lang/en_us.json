@@ -1,0 +1,17 @@
+{
+  "item.riamphur.soul_extractor": "Soul Extractor",
+  "item.riamphur.passive_soul": "Passive Soul",
+  "item.riamphur.hostile_soul": "Hostile Soul",
+  "item.riamphur.boss_soul": "Boss Soul",
+  "item.riamphur.player_soul": "Player Soul",
+  "item.riamphur.soul_bundle": "Soul Bundle",
+  "tooltip.riamphur.soul_bundle.total": "Souls collected: %f",
+  "tooltip.riamphur.soul_bundle.passive": "Passive: %f",
+  "tooltip.riamphur.soul_bundle.hostile": "Hostile: %f",
+  "tooltip.riamphur.soul_bundle.boss": "Boss: %f",
+  "tooltip.riamphur.soul_bundle.player": "Player: %f",
+
+  "itemgroup.riamphur.riamphur-mischief": "Riamphur Mischief",
+
+  "enchantment.riamphur.soul_reaper": "Soul Reaper"
+}

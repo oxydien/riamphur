@@ -1,0 +1,40 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "${group}",
+		"id": "riamphur",
+		"version": "${version}",
+		"metadata": {
+			"name": "Riamphur",
+			"description": "== Some utility items and code reused in other mods ==\nRiamphur for now includes code for entity souls that can be acquired by killing mobs with Soul Extractor or new Soul Reaper enchantment.",
+			"contributors": {
+				"oxydien": "Owner"
+			},
+			"contact": {
+				"homepage": "https://oxydien.dev/",
+				"issues": "https://github.com/oxydien/riamphur-mod",
+				"sources": "https://github.com/oxydien/riamphur-mod"
+			},
+			"icon": "assets/riamphur/icon.png"
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"entrypoints": {
+			"init": "dev.oxydien.riamphur.Riamphur"
+		},
+		"depends": [
+			{
+				"id": "quilt_loader",
+				"versions": ">=0.19.1"
+			},
+			{
+				"id": "quilted_fabric_api",
+				"versions": ">=7.0.2"
+			},
+			{
+				"id": "minecraft",
+				"versions": ">=1.20"
+			}
+		]
+	},
+	"mixin": "riamphur.mixins.json"
+}
