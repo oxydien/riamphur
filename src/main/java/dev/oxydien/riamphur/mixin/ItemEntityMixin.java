@@ -37,7 +37,6 @@ public class ItemEntityMixin {
 							int added = SoulBundle.getAcceptableSoulCount(stack, soulItem.getSoulType(), itemStack.getCount());
 							if (added > 0) {
 								itemStack.decrement(added);
-								Riamphur.Log("Added " + added + " " + soulItem.getSoulType() + " to " + bundleItem + " bundle");
 								SoulBundle.addSoulToBundle(stack, soulItem, added);
 							}
 						}

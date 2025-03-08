@@ -2,6 +2,7 @@ package dev.oxydien.riamphur.config;
 
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import dev.oxydien.riamphur.Riamphur;
 import dev.oxydien.riamphur.enums.SoulType;
@@ -73,9 +74,9 @@ public class RiamphurConfig {
 
 	private void saveConfig() {
 		var gson = new GsonBuilder().setPrettyPrinting().create();
-		var jsonElement = gson.toJsonTree(this.SoulTypeOverrides);
-		var jsonString = gson.toJson(jsonElement);
-
+		var jsonObject = new JsonObject();
+		jsonObject.add("soulTypeOverrides", gson.toJsonTree(this.SoulTypeOverrides));
+		var jsonString = gson.toJson(jsonObject);
 		try {
 			Files.write(configPath, jsonString.getBytes());
 		} catch (IOException e) {
@@ -96,6 +97,10 @@ public class RiamphurConfig {
 	}
 
 	public Optional<SoulType> getSoulType(String id) {
+		if (this.SoulTypeOverrides == null) {
+			return Optional.empty();
+		}
+
 		SoulType override = this.SoulTypeOverrides.get(id);
 		if (override != null) {
 			return Optional.of(override);

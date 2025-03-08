@@ -1,6 +1,5 @@
 package dev.oxydien.riamphur.items;
 
-import dev.oxydien.riamphur.Riamphur;
 import dev.oxydien.riamphur.enums.SoulType;
 import dev.oxydien.riamphur.interfaces.EntitySoulAcceptor;
 import net.minecraft.client.item.TooltipContext;
@@ -26,7 +25,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class SoulBundle extends Item {
-	public static final int MAX_PER_SOUL_TYPE = 60; // Max number of souls per type
+	public static final int MAX_PER_SOUL_TYPE = 1000; // Max number of souls per type
 	private static final int ITEM_BAR_COLOR = MathHelper.color(0.4F, 0.4F, 1.0F);
 	private static final String SOULS_NBT_KEY = "souls";
 
@@ -253,7 +252,6 @@ public class SoulBundle extends Item {
 	@Override
 	public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
 		if (user instanceof ServerPlayerEntity serverPlayerEntity) {
-			Riamphur.Log("Using soul bundle on entity!");
 			if (entity instanceof EntitySoulAcceptor acceptor) {
 				// For each soul type in the bundle, try to give it to the entity
 				for (SoulType type : SoulType.values()) {
